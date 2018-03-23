@@ -32,6 +32,18 @@ namespace MvcMovie.Controllers
 
             var movies = from m in _context.Movie
                          select m;
+
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                movies = movies.Where(s => s.Title.Contains(searchString));
+            }
+
+            if (!String.IsNullOrEmpty(movieGenre))
+            {
+                movies = movies.Where(x => x.Genre == movieGenre);
+            }
+
             switch (sortOrder)
             {
                 case "Date":
@@ -43,16 +55,6 @@ namespace MvcMovie.Controllers
                 default:
                     movies = movies.OrderBy(s => s.ReleaseDate);
                     break;
-            }
-
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                movies = movies.Where(s => s.Title.Contains(searchString));
-            }
-
-            if (!String.IsNullOrEmpty(movieGenre))
-            {
-                movies = movies.Where(x => x.Genre == movieGenre);
             }
 
             var movieGenreVM = new MovieGenreViewModel();

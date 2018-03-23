@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color:cornsilk;
 }
 
 /* Wrapping element */
@@ -32,4 +33,30 @@
     .carousel-caption {
         display: none;
     }
+}
+.navbar-inverse{
+    background-color:darkcyan;
+    border-color:transparent;
+}
+
+.navbar-collapse{
+    color:cornsilk;
+}
+a:link, a:visited, a:active {
+    color: darkcyan;
+}
+a:hover{
+    color:darkgray;
+}
+.navbar-inverse .navbar-brand {
+    color: cornsilk;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: cornsilk;
+}
+.navbar-inverse .navbar-nav > li > a:hover{
+    color: darkgray;
+}
+h2{
+    color:indianred;
 }
